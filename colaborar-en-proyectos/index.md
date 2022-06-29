@@ -1,16 +1,16 @@
-﻿- [Como colaborar en un proyecto](#como-colaborar-en-un-proyecto)
-		- [Paso 1: Hacer fork al repositorio](#paso-1-hacer-fork-al-repositorio)
-		- [Paso 2: Clonar el repositorio](#paso-2-clonar-el-repositorio)
-		- [Paso 3: Crear conexión con el repositorio original](#paso-3-crear-conexión-con-el-repositorio-original)
-		- [Paso 4: Crear nuestra rama de trabajo](#paso-4-crear-nuestra-rama-de-trabajo)
-		- [Paso 5: Hacer los cambios necesarios](#paso-5-hacer-los-cambios-necesarios)
-		- [Paso 6: Guardar nuestros cambios y hacer commit](#paso-6-guardar-nuestros-cambios-y-hacer-commit)
-		- [Paso 7: Mezclamos las diferencias](#paso-7-mezclamos-las-diferencias)
-		- [Paso 8: Subimos la rama en la que hemos estado trabajando](#paso-8-subimos-la-rama-en-la-que-hemos-estado-trabajando)
-		- [Paso 9: Crear el pull request (PR)](#paso-9-crear-el-pull-request-pr)
-		- [Paso extra: Obtener nuevos cambios](#paso-extra-obtener-nuevos-cambios)
+﻿**Tabla de Contenidos**
 
-# Como colaborar en un proyecto
+- [Paso 1: Hacer fork al repositorio](#paso-1-hacer-fork-al-repositorio)
+- [Paso 2: Clonar el repositorio](#paso-2-clonar-el-repositorio)
+- [Paso 3: Crear conexión con el repositorio original](#paso-3-crear-conexión-con-el-repositorio-original)
+- [Paso 4: Crear nuestra rama de trabajo](#paso-4-crear-nuestra-rama-de-trabajo)
+- [Paso 5: Hacer los cambios necesarios](#paso-5-hacer-los-cambios-necesarios)
+- [Paso 6: Guardar nuestros cambios y hacer commit](#paso-6-guardar-nuestros-cambios-y-hacer-commit)
+- [Paso 7: Mezclamos las diferencias](#paso-7-mezclamos-las-diferencias)
+- [Paso 8: Subimos la rama en la que hemos estado trabajando](#paso-8-subimos-la-rama-en-la-que-hemos-estado-trabajando)
+- [Paso 9: Crear el pull request (PR)](#paso-9-crear-el-pull-request-pr)
+- [Paso extra: Obtener nuevos cambios](#paso-extra-obtener-nuevos-cambios)
+
 
 En esta guía veremos los conceptos necesarios para empezar a trabajar de manera colaborativa en un repositorio de Github a través de Git
 
@@ -37,7 +37,7 @@ Luego de eso veremos que se ha copiado el repositorio a nuestra cuenta de github
 
 Una vez hecho el fork, vamos a proceder a clonar el repositorio que se ha copiado en nuestra cuenta. Este lo clonamos en algún lugar específico de nuestra computadora
 
-> Nota: Cuando clonamos un repositorio, se crea una carpeta con el nombre del 
+> Nota: Cuando clonamos un repositorio, se crea una carpeta con el nombre del
 > repositorio por lo que no hace falta crear una carpeta en específico para el proyecto
 
 Para nuestro ejemplo vamos a clonar el repositorio en el escritorio
