@@ -10,7 +10,7 @@
 - [Paso 8: Subimos la rama en la que hemos estado trabajando](#paso-8-subimos-la-rama-en-la-que-hemos-estado-trabajando)
 - [Paso 9: Crear el pull request (PR)](#paso-9-crear-el-pull-request-pr)
 - [Paso extra: Obtener nuevos cambios](#paso-extra-obtener-nuevos-cambios)
-
+****
 
 En esta guía veremos los conceptos necesarios para empezar a trabajar de manera colaborativa en un repositorio de Github a través de Git
 
@@ -23,15 +23,15 @@ El repositorio que estaremos usando para acompañar nuestra guía lo encuentras 
 
 Cuando estemos dentro de la página del repositorio nos dirigiremos a la parte superior derecha y presionaremos el botón que dice `Fork`
 
-![Foto del Fork](https://drive.google.com/file/d/16ZOoTsYDBZkaqVyq_LD70oPAZia4bYk_/view?usp=sharing)
+![Foto del Fork](images/fork1.jpeg)
 
 Nos va salir una ventana similar a esta, donde podremos cambiar el nombre y la descripción al repositorio si es que así lo quisiéramos, en este caso lo dejamos igual y le damos a `Create fork`
 
-![Foto de la ventana luego del fork]()
+![Foto de la ventana luego del fork](images/fork2.jpeg)
 
 Luego de eso veremos que se ha copiado el repositorio a nuestra cuenta de github.
 
-![Foto de la copia]()
+![Foto de la copia](images/fork3.jpeg)
 
 ### Paso 2: Clonar el repositorio
 
@@ -43,6 +43,7 @@ Una vez hecho el fork, vamos a proceder a clonar el repositorio que se ha copiad
 Para nuestro ejemplo vamos a clonar el repositorio en el escritorio
 
 1. Abrimos Git Bash (o Windows Terminal si lo tienen instalado) y colocamos
+
 	```bash
 	cd Desktop
 	# o
@@ -50,7 +51,11 @@ Para nuestro ejemplo vamos a clonar el repositorio en el escritorio
 
 	# Esto dependerá de como esté configurado tu sistema operativo owo
 	```
+
+	![Entrando al escritorio](images/clonando-repo1.PNG)
+
 2. Colocamos el comando
+
 	```bash
 	git clone <URL del repositorio>
 	```
@@ -58,12 +63,17 @@ Para nuestro ejemplo vamos a clonar el repositorio en el escritorio
 	```bash
 	git clone https://github.com/ashel1806/PR-prueba.git
 	```
+	![Comando para clonar](images/clonando-repo2.PNG)
+
 	Esto va a crear una carpeta en nuestro Escritorio llamada `PR-prueba`
-	
+
 3.  Accedemos a nuestro repositorio clonado en nuestra computadora
+
 	```bash
 	cd PR-prueba
 	```
+	![Acceder al repositorio clonado](images/clonando-repo3.PNG)
+
 	Y Listo!, ya tendriamos el repositorio clonado en nuestra computadora owo
 
 ### Paso 3: Crear conexión con el repositorio original
@@ -74,28 +84,35 @@ Cuando clonamos el repositorio de Github a nuestra computadora, de manera intern
 git remote get-url origin
 ```
 
+![Ver la url de origin](images/upstream1.PNG)
+
 Aquí vemos que al ejecutar el comando nos muestra la url del repositorio de GitHub que se ha guardado en nuestra cuenta
 
 Además de tener una conexión al repositorio de nuestra cuenta, es importante tener también una conexión hacia el repositorio original, a esta conexión se le asigna de manera convencional el nombre `upstream`
 
-Para crear esta conexión debemos ejecutar el siguiente comando: 
+Para crear esta conexión debemos ejecutar el siguiente comando:
 
 ```bash
 git remote add <nombre de la conexión> <url del repositorio>
 ```
-En nuestro caso sería: 
+
+En nuestro caso sería:
 
 ```bash
 git remote add upstream https://github.com/catWhatWhat/PR-prueba
 ```
 
-Vemos que no nos indica si la conexión se ha hecho correctamente, así que lo hacemos manualmente con el comando: 
+![Añadiendo conexion upstream](images/upstream2.PNG)
+
+Vemos que no nos indica si la conexión se ha hecho correctamente, así que lo hacemos manualmente con el comando:
 
 ```bash
 git remote get-url upstream
 ```
 
-En la imagen podemos ver que nos muestra la url del repositorio original 
+![Viendo la conexion de upstream](images/upstream3.PNG)
+
+En la imagen podemos ver que nos muestra la url del repositorio original
 
 ### Paso 4: Crear nuestra rama de trabajo
 
@@ -113,6 +130,8 @@ Para nuestro caso sería:
 git checkout -b cambios
 ```
 
+![Crear rama cambios](images/crear-rama1.PNG)
+
 En la imagen vemos como es que se ha cambiado la palabra *main* por *cambios* (el nombre de la rama que acabamos de crear), esto es debido a que el comando `git checkout -b` además de crear  una nueva rama también nos posiciona en ella, moviéndonos de la rama principal (*main*) a la rama nueva que hemos creado (*cambios*)
 
 ### Paso 5: Hacer los cambios necesarios
@@ -126,15 +145,23 @@ Para nuestro ejemplo vamos a agregar un archivo de Javascript cuyo nombre será 
 	```bash
 	code .
 	```
-	
+	![Abriendo vs code desde la terminal](images/cambios1.PNG)
+
 	Esto nos abrirá la carpeta de nuestro repositorio dentro de Visual Studio Code
+
+	![Ventana de vs code con nuestra carpeta](images/cambios2.PNG)
 
 	Si observamos la parte inferior dentro de VS Code, notaremos que nos señala la rama en la que nos encontramos, esto es muy importante ya que en algunas ocasiones puede que estemos trabajando dentro de la rama principal (*main*) , lo cual es muy peligroso.
 
 2. Creamos nuestro archivo
+
+	![Creando el archivo](images/cambios3.PNG)
+
 3. Colocamos el `console.log`
 	> Si quieres ejecutar este archivo para que se imprima esto en la consola, debes tener
 	> instalado [Node.js](https://nodejs.org/es/)
+
+	![Colocando el console.log](images/cambios4.PNG)
 
 ### Paso 6: Guardar nuestros cambios y hacer commit
 
@@ -145,25 +172,30 @@ Luego de realizar los cambios, o agregar el código que consideremos necesario, 
 	Esto lo hacemos mediante el comando
 
 	```bash
-	# si son pocos los archivos a modificar
+	# si son pocos los archivos a modificar (menos de 5)
 	git add <archivo-1> <archivo-2> ... <archivo-n>
-	
+
 	# si son varios archivos a modificar
 	git add .
-	
-	# Con el "." indicamos que se van a subir todos los archivos 
+
+	# Con el "." indicamos que se van a subir todos los archivos
 	# de la carpeta que han sido agregados o modificados
 	```
 
-	En nuestro caso solo es 1 archivo, por lo que pondremos: 
+	En nuestro caso solo es 1 archivo, por lo que pondremos:
 
 	```bash
 	git add vasquez-a.js
 	```
+
+	![Guardando los cambios](images/guardar1.PNG)
+
 	Para ver si ha sido agregado o no, podemos usar el comando `git status` que nos muestra el estado de los archivos que hemos modificado o agregado.
-	
+
+	![Viendo el estado de los cambios](images/guardar2.PNG)
+
 	Aquí nos muestra que hay un archivo que hemos agregado y que está listo para confirmar su subida al repositorio
-	
+
 2.  Confirmamos los archivos que se van a subir
 
 	Esto lo hacemos mediante el comando:
@@ -171,15 +203,18 @@ Luego de realizar los cambios, o agregar el código que consideremos necesario, 
 	```bash
 	git commit -m '<mensaje de confirmación>'
 	```
+
 	Dentro de `<mensaje de confirmación>`pondremos un mensaje descriptivo del cambio que acabamos de realizar. Este mensaje puede ser cualquiera que se les ocurra, siempre y cuando describa el cambio o modificación que hayamos realizado.
-	
+
 	Para seguir con nuestro ejemplo el mensaje será *"Nuevo PR de"* seguido de su nombre:
 
 	```bash
 	git commit -m 'Nuevo PR de Ashel Vasquez'
 	```
 
-	Este comando nos muestra cuantos archivos se han creado y/o modificado
+	![Viendo los archivos que hemos agregado](images/guardar3.PNG)
+
+	Este comando nos muestra cuantos archivos que se han creado y/o modificado han sido confirmados para subirse al repositorio
 
 ### Paso 7: Mezclamos las diferencias
 
@@ -196,37 +231,51 @@ Para nuestro caso, vamos a mezclar las diferencias (si es que las hay) de la ram
 ```bash
 git pull upstream main
 ```
+![Mezclando diferencias](images/mezcla1.PNG)
+
 Si nos sale un mensaje de `Already up to date`, quiere decir que el repositorio original no tiene ninguna modificación
+
 
 ### Paso 8: Subimos la rama en la que hemos estado trabajando
 
-Esto lo hacemos mediante el comando: 
+Esto lo hacemos mediante el comando:
 ```bash
 git push <nombre de la conexion del repositorio> <rama a subir>
 ```
 
-Nuestra rama se llama `cambios`, y debemos subir nuestra rama al repositorio que hemos creado nosotros, es decir a la conexión con nuestro repositorio que tiene como nombre `origin`: 
+Nuestra rama se llama `cambios`, y debemos subir nuestra rama al repositorio que hemos creado nosotros, es decir a la conexión con nuestro repositorio que tiene como nombre `origin`:.
 
-Entonces ponemos. 
+Entonces ponemos:
 
 ```bash
 git push origin cambios
 ```
 
-En la imagen nos indica que debemos hacer un pull request (PR) dentro de nuestro repositorio
+![Subiendo la rama](images/push-rama1.PNG)
+
+En la imagen nos indica que debemos crear un pull request (PR) dentro de nuestro repositorio
 
 ### Paso 9: Crear el pull request (PR)
 
 Nos dirigimos a nuestro repositorio en GitHub y vemos que nos aparecerá un botón que dice `Compare & pull request`, el cual tenemos que presionar
 
+![Boton de PR](images/crear-PR1.PNG)
+
 Se nos abrirá una ventana similar a esta, en donde podremos modificar el título del PR que vamos a crear y agregar una pequeña descripción de los cambios que hemos agregado
+
+![Ventana de PR](images/crear-PR2.PNG)
 
 Agregamos la descripción y le damos al botón `Create pull request`
 
+![Descripción y botón](images/crear-PR3.PNG)
+
 Nos saldrá esta otra ventana en donde podemos ver varias opciones:
+
 - Ver si nuetro PR tinene algun conflicto con el repositorio original
 - Agregar comentarios al PR
-- Cerrar el PR 
+- Cerrar el PR
+
+![Opciones de PR](images/crear-PR4.PNG)
 
 Ahora nos toca esperar a que el dueño del repositorio original acepte nuestro PR, nos deje una review, o que no lo acepte pero que nos dé una review de lo que debemos de cambiar
 
@@ -236,7 +285,11 @@ Ahora nos toca esperar a que el dueño del repositorio original acepte nuestro P
 
 Una vez que veamos que ha sido aceptado nuestro PR (el estado paso de *Open* a *Merged*), podemos proceder a eliminar la rama en la que hemos estado trabajando
 
-Y ya estaría borrada nuestra rama del repositorio en GitHub :D
+![Estadoa actualizado](images/crear-PR5.PNG)
+![Boton para elminar nuestra rama](images/crear-PR6.PNG)
+![Rama borrada](images/crear-PR7.PNG)
+
+Y ya estaría borrada nuestra rama del repositorio en GitHub OwO
 
 También la borraremos de nuestro repositorio local en nuestra computadora, para lo cual ejecutaremos los siguientes comandos en orden
 
@@ -247,6 +300,9 @@ git checkout main
 # procedemos a eliminar la rama "cambios"
 git branch -D cambios
 ```
+
+![Accediendo a la rama main](images/borrar-rama1.PNG)
+![Borrando la rama cambios del respositorio local](images/borrar-rama2.PNG)
 
 ### Paso extra: Obtener nuevos cambios
 
